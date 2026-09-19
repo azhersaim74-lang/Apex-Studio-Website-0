@@ -516,7 +516,7 @@ body { min-width: 320px; overflow-x: hidden; }
   background: var(--ink);
   color: var(--paper);
   padding: 115px 0 122px;
-  background-image: linear-gradient(90deg, rgba(26, 26, 26, .97) 0%, rgba(26, 26, 26, .93) 48%, rgba(26, 26, 26, .78) 100%), url('/assets/hero-2.jpg');
+  background-image: linear-gradient(90deg, rgba(26, 26, 26, .97) 0%, rgba(26, 26, 26, .93) 48%, rgba(26, 26, 26, .78) 100%), var(--apex-services-image);
   background-position: center, center right;
   background-size: cover;
 }
