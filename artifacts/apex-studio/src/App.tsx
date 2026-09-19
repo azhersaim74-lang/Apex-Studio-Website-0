@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type FormEvent, type MouseEvent, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type CSSProperties, type FormEvent, type MouseEvent, type ReactNode } from 'react';
 import {
   ArrowDown,
   ArrowUpRight,
@@ -30,6 +30,7 @@ const GOOGLE_MAPS = 'https://maps.app.goo.gl/rDKPWTKyZ6fCm8vC8';
 const INSTAGRAM = 'https://www.instagram.com/apex___.studio';
 const TIKTOK = 'https://www.tiktok.com/@apexstudio___';
 const SERVICES = ['Car Detailing', 'Paint Correction', 'Paint Protection Film (PPF)'] as const;
+const ASSET_BASE = import.meta.env.BASE_URL;
 
 type FormState = {
   name: string;
@@ -125,7 +126,7 @@ function Home() {
     <div className="apex-page">
       <header className="apex-nav apex-wrap">
         <a href="#top" aria-label="Apex Studio home" data-testid="link-navbar-home">
-          <img className="apex-logo" src="/assets/logo.png" alt="Apex Studio — Car Detailing" />
+          <img className="apex-logo" src={`${ASSET_BASE}assets/logo.png`} alt="Apex Studio — Car Detailing" />
         </a>
         <nav className={`apex-navlinks ${menuOpen ? 'is-open' : ''}`} aria-label="Primary navigation">
           <a href="#studio" onClick={() => setMenuOpen(false)} data-testid="link-navbar-studio">The studio</a>
@@ -143,7 +144,7 @@ function Home() {
 
       <main id="top">
         <section className="apex-hero" ref={heroRef} onMouseMove={handleHeroMove} onMouseLeave={resetHero}>
-          <img className="apex-hero-image" src="/assets/hero-1.jpg" alt="Black Toyota Hilux inside the Apex Studio workshop" />
+           <img className="apex-hero-image" src={`${ASSET_BASE}assets/hero-1.jpg`} alt="Black Toyota Hilux inside the Apex Studio workshop" />
           <div className="apex-hero-content">
             <p className="apex-kicker reveal">Multan / Open all days / 10 AM – 10 PM</p>
             <h1 className="apex-display reveal delay-1">The finish<br /><em>you feel.</em></h1>
@@ -191,7 +192,11 @@ function Home() {
           </div>
         </section>
 
-        <section id="services" className="apex-dark">
+         <section
+           id="services"
+           className="apex-dark"
+           style={{ '--apex-services-image': `url(${ASSET_BASE}assets/hero-2.jpg)` } as CSSProperties}
+         >
           <div className="apex-wrap">
             <div className="apex-section-head reveal">
               <div>
@@ -223,7 +228,7 @@ function Home() {
         <section className="apex-feature">
           <div className="apex-wrap apex-feature-grid">
             <div className="reveal">
-              <img className="apex-feature-img" src="/assets/hero-2.jpg" alt="Apex Studio vehicle receiving a precision finish under inspection lights" />
+              <img className="apex-feature-img" src={`${ASSET_BASE}assets/hero-2.jpg`} alt="Apex Studio vehicle receiving a precision finish under inspection lights" />
             </div>
             <div className="apex-feature-copy reveal delay-1">
               <p className="apex-kicker">03 / The difference</p>
@@ -248,15 +253,15 @@ function Home() {
             </div>
             <div className="apex-gallery-grid">
               <figure className="apex-gallery-card reveal">
-                <img src="/assets/ppf-car.jpg" alt="Vehicle ready for Paint Protection Film at Apex Studio" />
+                <img src={`${ASSET_BASE}assets/ppf-car.jpg`} alt="Vehicle ready for Paint Protection Film at Apex Studio" />
                 <figcaption className="apex-gallery-label">Paint Protection Film</figcaption>
               </figure>
               <figure className="apex-gallery-card reveal delay-1">
-                <img src="/assets/detailing-progress.jpg" alt="Detailer polishing a dark car under inspection lights" />
+                <img src={`${ASSET_BASE}assets/detailing-progress.jpg`} alt="Detailer polishing a dark car under inspection lights" />
                 <figcaption className="apex-gallery-label">Detailing in Progress</figcaption>
               </figure>
               <figure className="apex-gallery-card reveal delay-2">
-                <img src="/assets/showroom-1.jpg" alt="The Apex Studio showroom and workshop entrance" />
+                <img src={`${ASSET_BASE}assets/showroom-1.jpg`} alt="The Apex Studio showroom and workshop entrance" />
                 <figcaption className="apex-gallery-label">Our Showroom</figcaption>
               </figure>
             </div>
@@ -275,7 +280,7 @@ function Home() {
         <section id="booking" className="apex-booking">
           <div className="apex-wrap">
             <div className="apex-booking-logo-top reveal">
-              <img src="/assets/logo.png" alt="Apex Studio — Car Detailing" />
+               <img src={`${ASSET_BASE}assets/logo.png`} alt="Apex Studio — Car Detailing" />
             </div>
             <div className="apex-booking-grid">
               <div className="apex-booking-brand reveal">
