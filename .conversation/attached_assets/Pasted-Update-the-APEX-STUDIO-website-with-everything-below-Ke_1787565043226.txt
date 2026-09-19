@@ -1,0 +1,27 @@
+Update the APEX STUDIO website with everything below. Keep it clean, not overdone.
+
+BUSINESS: Apex Studio - Car Detailing. Open all days, 10 AM - 10 PM. Services: Car Detailing, Paint Correction, Paint Protection Film (PPF). Owner: Ali Salman Mehdi - show this name in bold wherever contact/owner info appears.
+
+COLORS: Light premium theme - white/off-white background #FAFAFA, light grey cards #F0F0F0, charcoal text #1A1A1A, bold red accent #D91E36, gold accent #C9A15A used sparingly. Good contrast everywhere, nothing invisible.
+
+WHATSAPP NUMBER +92 319 0470986: This exact number, as https://wa.me/923190470986, must be used on EVERY contact/booking button on the site - navbar, footer, contact section, floating button, and the booking form submit button. Opens WhatsApp chat in new tab.
+
+OTHER LINKS (all clickable, new tab, in footer and contact section):
+- Google Maps: https://maps.app.goo.gl/rDKPWTKyZ6fCm8vC8
+- Instagram: https://www.instagram.com/apex___.studio
+- TikTok: https://www.tiktok.com/@apexstudio___
+
+BOOKING FORM: Add a section with logo centered at top, then fields: Name, Contact number, Service Needed (dropdown: Car Detailing, Paint Correction, Paint Protection Film PPF), Car Model, then a "Send Booking on WhatsApp" button that opens https://wa.me/923190470986 with all details pre-filled in the message. Validate Name, Contact, and Car Model before allowing submit.
+
+IMAGES in public/assets - place as follows:
+- logo.png = navbar logo AND top of booking form
+- hero-1.jpg = hero section background
+- hero-2.jpg = background accent in Services or Stats section
+- ppf-car.jpg = gallery, labeled "Paint Protection Film"
+- detailing-progress.jpg = gallery, labeled "Detailing in Progress"
+- showroom-1.jpg = gallery, labeled "Our Showroom"
+If filenames don't match exactly, match images by content instead.
+
+ANIMATIONS: Keep existing scroll fade-ins, hover effects, and the 3D hero element - smooth and fast, not excessive.
+
+Check spelling everywhere. Run dev server after and confirm no errors before saying it's done.

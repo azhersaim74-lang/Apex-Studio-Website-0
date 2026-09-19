@@ -1,0 +1,42 @@
+Update the APEX STUDIO website with the following. Keep it clean and premium — do not overdo animations or effects.
+
+BUSINESS INFO:
+- Name: Apex Studio — Car Detailing
+- Hours: Open All Days, 10 AM – 10 PM
+- Services offered: Car Detailing, Paint Correction, Paint Protection Film (PPF)
+- Owner/Founder: Ali Salman Mehdi — display this name in bold wherever contact/owner info is shown
+
+COLOR SCHEME:
+- Light, premium theme (not dark): white/off-white background (#FAFAFA), light grey cards (#F0F0F0), charcoal text (#1A1A1A), bold racing red accent (#D91E36) for buttons and highlights, metallic gold (#C9A15A) used sparingly for premium accents. Make sure every section has good contrast, nothing invisible.
+
+CONTACT — MUST BE CLEARLY DISPLAYED AND CLICKABLE:
+- WhatsApp Business number: +92 319 0470986 — this is a WhatsApp Business number, so every "contact" or "book now" action anywhere on the site (buttons, footer, floating button) must link to https://wa.me/923190470986 and open a chat directly.
+- Google Maps: link to https://maps.app.goo.gl/rDKPWTKyZ6fCm8vC8 — clicking it must open the location in Google Maps in a new tab.
+- Instagram: link to https://www.instagram.com/apex___.studio — clickable, opens in new tab.
+- TikTok: link to https://www.tiktok.com/@apexstudio___ — clickable, opens in new tab.
+- All four (WhatsApp, Maps, Instagram, TikTok) should be listed as separate, clearly labeled clickable items in the footer and contact section — each with its own icon and opening in a new tab (target="_blank" rel="noopener noreferrer").
+
+BOOKING TABLE / QUOTE FORM — add this as a dedicated section:
+- Apex Studio logo centered at the top of the form
+- Fields below the logo, in this order:
+  1. Name
+  2. Contact number
+  3. Service Needed (dropdown: Car Detailing, Paint Correction, Paint Protection Film (PPF))
+  4. Car Model
+- A "Send Booking on WhatsApp" button at the bottom
+- On submit: validate Name, Contact number, and Car Model are filled, then build a message from all fields and open https://wa.me/923190470986?text=[encoded message] in a new tab. No backend or database needed.
+- Style this form box minimal, centered, luxurious, matching the site's light color scheme.
+
+IMAGES — I've uploaded these to public/assets. Please place them as follows:
+- logo.png → studio logo, used in navbar AND at the top of the booking form
+- hero-1.jpg (first AI-generated image) → hero section background/main visual
+- hero-2.jpg (second AI-generated image) → use as a secondary visual, e.g. background accent in the Services or Stats section
+- ppf-car.jpg → gallery, labeled "Paint Protection Film"
+- detailing-progress.jpg → gallery, labeled "Detailing in Progress"
+- showroom-1.jpg and any additional showroom photos → gallery, labeled "Our Showroom"
+(If any filename doesn't match what I uploaded, check the public/assets folder and match them by content/order instead of failing silently.)
+
+ANIMATIONS:
+- Keep the existing subtle scroll fade-ins and hover effects, plus the 3D interactive element already in the hero. Nothing excessive — smooth and fast, not distracting.
+
+Double-check all spelling across the site (services, labels, headings) before finishing. After all changes, run the dev server and confirm there are no errors and every image/link works before telling me it's done.

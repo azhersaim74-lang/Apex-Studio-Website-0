@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Apex Studio — Car Detailing"
+description = "A premium one-page website for Apex Studio car detailing, showcasing services, workshop imagery, contact channels, and a WhatsApp booking form."
+version = "1.0.0"
+id = "artifacts/apex-studio"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19143
+
+[services.development]
+run = "pnpm --filter @workspace/apex-studio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/apex-studio", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/apex-studio/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19143"
+BASE_PATH = "/"
