@@ -1,0 +1,68 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install pnpm
+        run: npm install -g pnpm@10
+
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Build website
+        working-directory: artifacts/apex-studio
+        env:
+          PORT: "3000"
+          BASE_PATH: /Apex-Studio-Website-0/
+          NODE_ENV: production
+        run: pnpm run build
+
+      - name: Find build output
+        id: out
+        run: |
+          if [ -f artifacts/apex-studio/dist/public/index.html ]; then
+            echo "dir=artifacts/apex-studio/dist/public" >> "$GITHUB_OUTPUT"
+          elif [ -f artifacts/apex-studio/dist/index.html ]; then
+            echo "dir=artifacts/apex-studio/dist" >> "$GITHUB_OUTPUT"
+          else
+            echo "index.html not found"
+            exit 1
+          fi
+
+      - name: Add 404 fallback
+        run: cp "${{ steps.out.outputs.dir }}/index.html" "${{ steps.out.outputs.dir }}/404.html"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ steps.out.outputs.dir }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
